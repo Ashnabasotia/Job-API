@@ -1,0 +1,251 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Job-API",
+		"_postman_id": "a0f25347-0bcb-00d0-37f7-44d33e13cdab",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register user",
+			"request": {
+				"url": {
+					"raw": "{{URL}}/auth/register",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "e",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						},
+						{
+							"key": "feature",
+							"value": "false",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						},
+						{
+							"key": "company",
+							"value": "ikea",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"Harry Potter\",\n\t\"email\" : \"potter@gmail.com\",\n\t\"password\": \"123456\"\n}\n\t"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"url": {
+					"raw": "{{URL}}/auth/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "e",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						},
+						{
+							"key": "feature",
+							"value": "false",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						},
+						{
+							"key": "company",
+							"value": "ikea",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\" : \"potter@gmail.com\",\n\t\"password\": \"123456\"\n}\n\t"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create job",
+			"request": {
+				"url": {
+					"raw": "{{URL}}/jobs/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"jobs",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "e",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						},
+						{
+							"key": "feature",
+							"value": "false",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						},
+						{
+							"key": "company",
+							"value": "ikea",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWVlNWQwMTczMzAzMjNjYWNjNzk4YzciLCJuYW1lIjoiR2lubnkgV2Vhc2xleSIsImlhdCI6MTY0MzAxMTMyOSwiZXhwIjoxNjQ1NjAzMzI5fQ.rrJyv547M5fj3CwByDeDsxXhxqraXTyM53jBkOmRGlA",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"company\" : \"cadence\",\n\t\"position\" : \"human resources\"\n}\n\t"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get job",
+			"request": {
+				"url": "{{URL}}/jobs/61edf5f557f6bf42501131c8",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWVkZDY4MzE4YzljNzNlOGM0MWY1YTgiLCJuYW1lIjoiUm9uIFdlYXNsZXkiLCJpYXQiOjE2NDMwMTEyMjQsImV4cCI6MTY0NTYwMzIyNH0.6O5bz_dBVgzFdWbNqD81C6b6UMa1RpoBWgEm9Oa9yTo",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update job",
+			"request": {
+				"url": "{{URL}}/jobs/61edf5f557f6bf42501131c8",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWVkZDY4MzE4YzljNzNlOGM0MWY1YTgiLCJuYW1lIjoiUm9uIFdlYXNsZXkiLCJpYXQiOjE2NDMwMTEyMjQsImV4cCI6MTY0NTYwMzIyNH0.6O5bz_dBVgzFdWbNqD81C6b6UMa1RpoBWgEm9Oa9yTo",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"company\": \"company-1\", \"position\": \"full-stack-devloper\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete Jobs",
+			"request": {
+				"url": "{{URL}}/jobs/61edf5f557f6bf42501131c8",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWVkZDY4MzE4YzljNzNlOGM0MWY1YTgiLCJuYW1lIjoiUm9uIFdlYXNsZXkiLCJpYXQiOjE2NDMwMTEyMjQsImV4cCI6MTY0NTYwMzIyNH0.6O5bz_dBVgzFdWbNqD81C6b6UMa1RpoBWgEm9Oa9yTo",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get all jobs",
+			"request": {
+				"url": "{{URL}}/jobs/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWVlYmI0MDcwNTg2ZDBiNjg4NjdjN2MiLCJuYW1lIjoiTGlseSBQb3R0ZXIiLCJpYXQiOjE2NDMwNDU0MTMsImV4cCI6MTY0NTYzNzQxM30.vhkxByzvCC9Yc4bjxcC3a6odTPJkdq-iC-u2pWFUq4o",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

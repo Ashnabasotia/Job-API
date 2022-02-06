@@ -1,0 +1,222 @@
+openapi: 3.0.0
+info:
+  title: Job-API
+  description: ''
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://jobs-api-0512.herokuapp.com/api/v1
+  variables: {}
+paths:
+  /auth/register:
+    post:
+      tags:
+      - Auth
+      summary: register user
+      description: ''
+      operationId: registeruser
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/registeruserrequest'
+            example:
+              name: Harry Potter
+              email: potter@gmail.com
+              password: '123456'
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /auth/login:
+    post:
+      tags:
+      - Auth
+      summary: login user
+      description: ''
+      operationId: loginuser
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/loginuserrequest'
+            example:
+              email: potter@gmail.com
+              password: '123456'
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /jobs:
+    post:
+      tags:
+      - Jobs
+      summary: create job
+      description: ''
+      operationId: createjob
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createjobrequest'
+            example:
+              company: cadence
+              position: human resources
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /jobs/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The job ID
+    get:
+      tags:
+      - Jobs
+      summary: Get job
+      description: ''
+      operationId: Getjob
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    patch:
+      tags:
+      - Jobs
+      summary: update job
+      description: ''
+      operationId: updatejob
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updatejobrequest'
+            example:
+              company: company-1
+              position: full-stack-devloper
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    delete:
+      tags:
+      - Jobs
+      summary: delete Jobs
+      description: ''
+      operationId: deleteJobs
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /jobs/:
+    get:
+      tags:
+      - Jobs
+      summary: get all jobs
+      description: ''
+      operationId: getalljobs
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+components:
+  schemas:
+    registeruserrequest:
+      title: registeruserrequest
+      required:
+      - name
+      - email
+      - password
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        name: Harry Potter
+        email: potter@gmail.com
+        password: '123456'
+    loginuserrequest:
+      title: loginuserrequest
+      required:
+      - email
+      - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: potter@gmail.com
+        password: '123456'
+    createjobrequest:
+      title: createjobrequest
+      required:
+      - company
+      - position
+      type: object
+      properties:
+        company:
+          type: string
+        position:
+          type: string
+      example:
+        company: cadence
+        position: human resources
+    updatejobrequest:
+      title: updatejobrequest
+      required:
+      - company
+      - position
+      type: object
+      properties:
+        company:
+          type: string
+        position:
+          type: string
+      example:
+        company: company-1
+        position: full-stack-devloper
+  securitySchemes:
+    httpBearer:
+      type: http
+      scheme: bearer
+security:
+- httpBearer: []
+tags:
+- name: Auth
+  description: ''
+- name: Jobs
+  description: ''
